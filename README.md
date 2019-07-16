@@ -62,10 +62,20 @@ Alternatively, if the owner of the GitHub repository stops releasing new builds,
 
 Now that we’ve got the file, install TensorFlow by issuing:
 ```
-方案一（优先 ）:sudo pip3 install tensorflow
-方案二(备选 测试 安装失败)sudo pip3 install /home/pi/tf/tensorflow-1.8.0-cp35-none-linux_armv7l.whl
+方案一（优先 ）
+虚拟环境:
+   1.sudo apt-get install python-virtualenv
+   2.virtualenv --system-site-packages -p python3 ./venv
+   3.source ./venv/bin/activate 
+   4.pip install --upgrade pip
+   5. pip install --upgrade tensorflow
+
+方案二:sudo pip3 install tensorflow
+
+方案三(备选 测试 安装失败)sudo pip3 install /home/pi/tf/tensorflow-1.8.0-cp35-none-linux_armv7l.whl
 下载链接 :https://www.piwheels.org/simple/tensorflow/  
          tensorflow-1.13.1-cp37-none-linux_armv7l.whl
+         
 ```
 TensorFlow also needs the LibAtlas package. Install it by issuing (if this command doesn't work, issue "sudo apt-get update" and then try again):
 ```
